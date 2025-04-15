@@ -1,0 +1,29 @@
+{
+	"name": "cli-starter",
+	"license": "MIT",
+	"description": "quick and easy way to quickly build cli packages",
+	"type": "module",
+	"version": "0.0.0",
+	"files": ["dist"],
+	"bin": {
+		"cli-starter": "dist/cli.js"
+	},
+	"main": "dist/cli.js",
+	"scripts": {
+		"build": "tsup",
+		"build:dev": "tsup --watch --clean false",
+		"lint": "bunx biome check --fix",
+		"lint:CI": "bunx biome check",
+		"typecheck": "tsc",
+		"prepublishOnly": "bun i && bun run lint:CI && tsc && bun run build"
+	},
+	"dependencies": {
+		"@stricli/core": "1.1.2"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "22.14.1",
+		"tsup": "8.4.0",
+		"typescript": "5.8.3"
+	}
+}
