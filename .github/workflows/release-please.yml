@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: googleapis/release-please-action@v4
         id: release
+        if: false
         with:
           token: ${{ secrets.RELEASE_PLEASE_GH_TOKEN }}
           release-type: simple
